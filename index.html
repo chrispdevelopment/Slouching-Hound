@@ -1,0 +1,1612 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Slouching Hound</title>
+    <meta name="keywords" content="pet portraits Martingale dog collars   Nottinghamshire greyhound collar whippet collar hand made dog collars jacquard trims heavy d rings beautiful designs, not just for dog shows pampered pooch satin lined pencil crayon pastel acrylic paint art work saluki sighthound slouching hound quality detail  jacquard trim Celtic designs flora designs  snuggle sacks sleeping bags tote bags dog beds">
+    <meta name="description" content="Exquisitely designed high quality  made to measure  dog collars and now pet portraits  specializing in sight hounds greyhounds whippet saluki made using the highest quality hardware and gorgeous embroidered jacquard trims collars .collars can be made to order with silk linings.i am based in Mansfield Nottinghamshire and you are welcome to collect your art work or i can post.">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+    <link href="SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css">
+    <link href="css/lightbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="engine2/style.css" media="screen" />
+   
+	<!-- CSS Styles
+  ================================================== -->
+	<style type="text/css">
+		body {
+			background-image: url(images/background.png);
+			background-repeat: repeat-x;
+		}
+		#sideMenuTextArea li {
+			list-style-type: none;
+			padding: 0px;
+			margin: 0px;
+		}
+		li a:link {
+			text-decoration: none;		
+		}
+		li a:hover {
+			color: #F00;
+		}
+		li a:active {
+			color: #F00;			
+		}
+		#sideMenuHeaderTextNoCollapse a:link {
+			text-decoration: none;
+		}
+		#sideMenuHeaderTextNoCollapse a:hover {
+			color: #F00;
+		}
+		#sideMenuHeaderTextNoCollapse a:active {
+			color: #F00;			
+		}
+		#bullet {
+			margin-left: 20px;
+			margin-top: 5px;
+			margin-bottom: 0px;
+		}
+		#bullets {
+			list-style-type: disc;
+			padding: 0px;
+			margin: 0px;
+		}
+		
+    </style>
+    
+	<!-- Java Script
+  ================================================== -->
+	<script src="js/jquery-1.8.3.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <script type="text/javascript" src="engine2/jquery.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        var counter1 = 0;
+        var counter2 = 0;
+		var currentPage = "";
+		var page = "";
+		var cart = new Object;
+		var cartOutput = new Object;
+		var cartItem = "";
+		var Item = "";
+		var itemPrice = 0;
+		var itemDescription = "";
+		var itemSize = "";
+		var itemColor = "";
+		var itemPicture = "";
+		var itemPictureSmall = "";
+		var cartID = 1;
+		
+        function pictureSwap1(){
+            if (counter1 == 0){
+                counter1 = counter1 + 1;
+                $('#sideMenuHeaderSign1').css("background-image", "url(images/plus_sign.png)");
+                
+            }
+            else{
+                $('#sideMenuHeaderSign1').css("background-image", "url(images/minus_sign.png)");
+                counter1 = 0;
+            }
+        }
+        
+        function pictureSwap2(){
+            if (counter2 == 0){
+                counter2 = counter2 + 1;
+                $('#sideMenuHeaderSign2').css("background-image", "url(images/plus_sign.png)");
+                
+            }
+            else{
+                $('#sideMenuHeaderSign2').css("background-image", "url(images/minus_sign.png)");
+                counter2 = 0;
+            }
+        }
+		
+		function pageSwap(page){
+			if (currentPage == ""){
+				$('#home').hide();
+				$('#martungale').hide();
+				$('.martungaleItem').hide();
+				$('#leather').hide();
+				$('.leatherItem').hide();
+				$('#designer').hide();
+				$('.designerItem').hide();
+				$('#standard').hide();
+				$('.standardItem').hide();
+				$('#beds').hide();
+				$('.bedsItem').hide();
+				$('#bowls').hide();
+				$('.bowlsItem').hide();
+				$('#portraits').hide();
+				$('#happy').hide();
+				$('#cart').hide();
+								
+				if($.cookie('currentPage')){
+					currentPage = $.cookie('currentPage');
+					$('#' + currentPage).show();	
+				}
+				else{
+					$('#home').show();
+					currentPage = "home";
+				}
+			}
+			else{
+				$('#home').hide();
+				$('#martungale').hide();
+				$('.martungaleItem').hide();
+				$('#leather').hide();
+				$('.leatherItem').hide();
+				$('#designer').hide();
+				$('.designerItem').hide();
+				$('#standard').hide();
+				$('.standardItem').hide();
+				$('#beds').hide();
+				$('.bedsItem').hide();
+				$('#bowls').hide();
+				$('.bowlsItem').hide();
+				$('#portraits').hide();
+				$('#happy').hide();
+				$('#cart').hide();
+				$('.' + currentPage + 'Wrapper').css("height", "290px");
+				$('#' + page).show();
+				currentPage = page;
+				$.cookie('currentPage', currentPage);				
+			}
+		}
+		
+		function itemInfo(theItem){
+			Item = theItem;
+			
+			switch(theItem){
+				case "Combustion":
+					itemPrice = 25;
+					itemDescription = "A red & orange flame martingale dog collar";
+					itemPicture = "images/items/martingale/CombustionLarge.jpg";
+					itemPictureSmall = "images/items/martingale/combustion.jpg";
+					break;
+					
+				case "Arson":
+					itemPrice = 25;
+					itemDescription = "A yellow flame martingale dog collar";
+					itemPicture = "images/items/martingale/arsonLarge.jpg";
+					itemPictureSmall = "images/items/martingale/arson.jpg";
+					break;
+					
+				case "Backdraft":
+					itemPrice = 25;
+					itemDescription = "A pink flame martingale dog collar";
+					itemPicture = "images/items/martingale/backdraftLarge.jpg";
+					itemPictureSmall = "images/items/martingale/backdraft.jpg";
+					break;
+						
+				case "Blowtorch":
+					itemPrice = 25;
+					itemDescription = "A blue flame martingale dog collar";
+					itemPicture = "images/items/martingale/blowtorchLarge.jpg";
+					itemPictureSmall = "images/items/martingale/blowtorch.jpg";
+					break;
+			
+				case "Blue":
+					itemPrice = 15;
+					itemDescription = "A blue leather dog collar";
+					itemPicture = "images/items/leather/blueLarge.jpg";
+					itemPictureSmall = "images/items/leather/blue.jpg";
+					break;
+						
+				case "Green":
+					itemPrice = 15;
+					itemDescription = "A green leather dog collar";
+					itemPicture = "images/items/leather/greenLarge.jpg";
+					itemPictureSmall = "images/items/leather/green.jpg";
+					break;
+						
+				case "Pink":
+					itemPrice = 15;
+					itemDescription = "A pink leather dog collar";
+					itemPicture = "images/items/leather/pinkLarge.jpg";
+					itemPictureSmall = "images/items/leather/pink.jpg";
+					break;
+						
+				case "Red":
+					itemPrice = 15;
+					itemDescription = "A red leather dog collar";
+					itemPicture = "images/items/leather/redLarge.jpg";
+					itemPictureSmall = "images/items/leather/red.jpg";
+					break;
+						
+				case "Italian":
+					itemPrice = 15;
+					itemDescription = "A italian style designer dog collar";
+					itemPicture = "images/items/designer/italianLarge.jpg";
+					itemPictureSmall = "images/items/designer/italian.jpg";
+					break;
+						
+				case "Star":
+					itemPrice = 15;
+					itemDescription = "A star style designer dog collar";
+					itemPicture = "images/items/designer/leatherStarLarge.jpg";
+					itemPictureSmall = "images/items/designer/leatherStar.jpg";
+					break;
+						
+				case "RedLeather":
+					itemPrice = 15;
+					itemDescription = "A red leather designer dog collar";
+					itemPicture = "images/items/designer/redLeatherLarge.jpg";
+					itemPictureSmall = "images/items/designer/redLeather.jpg";
+					break;
+					
+				case "Valentine":
+					itemPrice = 15;
+					itemDescription = "A valentine style designer dog collar";
+					itemPicture = "images/items/designer/valentineLarge.jpg";
+					itemPictureSmall = "images/items/designer/valentine.jpg";
+					break;
+					
+				case "Crossbones":
+					itemPrice = 40;
+					itemDescription = "A crossbones style collar & lead set";
+					itemPicture = "images/items/collar_lead_sets/crossbonesLarge.jpg";
+					itemPictureSmall = "images/items/collar_lead_sets/crossbones.jpg";
+					break;
+						
+				case "Multicolor":
+					itemPrice = 40;
+					itemDescription = "A multicolored collar & lead set";
+					itemPicture = "images/items/collar_lead_sets/multiColorLarge.jpg";
+					itemPictureSmall = "images/items/collar_lead_sets/multiColor.jpg";
+					break;
+						
+				case "PolkaDot":
+					itemPrice = 40;
+					itemDescription = "A polka dot collar & lead set";
+					itemPicture = "images/items/collar_lead_sets/polkaDotLarge.jpg";
+					itemPictureSmall = "images/items/collar_lead_sets/polkaDot.jpg";
+					break;
+						
+				case "SilverBlue":
+					itemPrice = 40;
+					itemDescription = "A silver & blue collar & lead set";
+					itemPicture = "images/items/collar_lead_sets/silverBlueLarge.jpg";
+					itemPictureSmall = "images/items/collar_lead_sets/silverBlue.jpg";
+					break;
+						
+				case "Bear":
+					itemPrice = 50;
+					itemDescription = "A bear style dog bed";
+					itemPicture = "images/items/beds/bearLarge.jpg";
+					itemPictureSmall = "images/items/beds/bear.jpg";
+					break;
+						
+				case "Oxford":
+					itemPrice = 50;
+					itemDescription = "A oxford style dog bed";
+					itemPicture = "images/items/beds/oxfordLarge.jpg";
+					itemPictureSmall = "images/items/beds/oxford.jpg";
+					break;
+						
+				case "PinkBed":
+					itemPrice = 50;
+					itemDescription = "A pink dog bed";
+					itemPicture = "images/items/beds/pinkLarge.jpg";
+					itemPictureSmall = "images/items/beds/pink.jpg";
+					break;
+						
+				case "Slumber":
+					itemPrice = 50;
+					itemDescription = "A slumber style dog bed";
+					itemPicture = "images/items/beds/slumberLarge.jpg";
+					itemPictureSmall = "images/items/beds/slumber.jpg";
+					break;
+						
+				case "Bones":
+					itemPrice = 20;
+					itemDescription = "A bones dog bowl";
+					itemPicture = "images/items/bowls/bonesLarge.jpg";
+					itemPictureSmall = "images/items/bowls/bones.jpg";
+					break;
+						
+				case "GoodDog":
+					itemPrice = 20;
+					itemDescription = "A good dog dog bowl";
+					itemPicture = "images/items/bowls/goodDogLarge.jpg";
+					itemPictureSmall = "images/items/bowls/goodDog.jpg";
+					break;
+						
+				case "Plastic":
+					itemPrice = 20;
+					itemDescription = "A plastic dog bowl";
+					itemPicture = "images/items/bowls/plasticLarge.jpg";
+					itemPictureSmall = "images/items/bowls/plastic.jpg";
+					break;
+						
+				case "Skull":
+					itemPrice = 20;
+					itemDescription = "A skull dog bowl";
+					itemPicture = "images/items/bowls/skullLarge.jpg";
+					itemPictureSmall = "images/items/bowls/skull.jpg";
+					break;			
+			}
+		}
+		
+		function showDescription(page){
+			var newHTML = [];
+			var itemSize = "";
+			var itemColor = "";
+
+			$('.' + page + 'Wrapper').css("height", "520px");
+			$('.' + page + 'DescriptionPic').css("background-image", "url(" + itemPicture + ")");
+			
+			newHTML.push('Price: £' + itemPrice + '<br> Description: ' + itemDescription + '<br> Available Sizes: <select name="sizes" id="' + 
+			page + 'ItemSize"><option>Large</option><option>Medium</option><option>Small</option></select> Available Colors: <select name="color" id="' + 
+			page + 'ItemColor"><option>Red</option><option>Green</option><option>Blue</option><option>Pink</option><option>Yellow</option><option>Orange</option><option>Purple</option></select> <input name="basketBtn" type="button" id="cart' + Item + '" value="Add to Basket">');
+			$('.' + page + 'DescriptionText').html(newHTML.join(""));
+			$('.' + page + 'Item').show();
+			$("#cart" + Item).click(function(){
+				itemSize = $('#' + page + 'ItemSize option:selected').val();
+				itemColor = $('#' + page + 'ItemColor option:selected').val();
+				addCart(Item, itemSize, itemColor);
+			})
+		}
+		
+		function updateCart(){
+			var newHTML = [];
+			
+			for (var i in cart)
+			{
+				cartOutput = cart[i];
+				itemInfo(cartOutput['name']);
+				
+				newHTML.push('<div class="cartItem" id="cartItemBox"> ' + 
+				'<img src="' + itemPictureSmall + '" alt="A picture of the ' + cartOutput['name'] + ' item" name="cartItemPic" width="60" height="60" align="left" id="cartItemPic"> ' + 
+				'Name: ' + cartOutput['name'] + ' <br> Size: ' + cartOutput['size'] + ' <br> Color: ' + cartOutput['color'] + 
+				'<input type="button" name="cartItemDel" id="cartItemDel' + cartOutput['ID'] + '" value="Delete Item"> </div>');
+			}
+			$("#cartItem").html(newHTML.join(""));
+			
+			//for (var y in cart)
+//			{
+//				cartOutput = cart[y];
+//				alert("Output" + cartOutput['ID']);
+//				$("#cartItemDel" + cartOutput['ID']).click(function(){
+//					deleteCart(cartOutput['ID']);
+//					updateCart();
+//				})	
+//			}
+			
+			var cartKeys = []
+			cartKeys = Object.keys(cartKeys);
+			
+			cartKeys.sort(function(a,b){return a-b});
+			
+			for (var b = 1; b < cartKeys.length; b++)
+			{
+				cartOutput = cart[b];
+				alert("Output" + cartOutput['ID']);
+				$("#cartItemDel" + cartOutput['ID']).click(function(){
+					deleteCart(cartOutput['ID']);
+					updateCart();
+				})	
+			}
+
+			
+		}
+		
+		function addCart(cartItem, theItemSize, theItemColor){
+			var cartItems = new Object;
+						
+			cartItems.ID = cartID;
+			cartItems.name = cartItem;
+			cartItems.size = theItemSize;
+			cartItems.color = theItemColor;
+			//cartItems.text = "Bob";
+			cart[cartID] = cartItems;
+			cartID = cartID + 1;
+		}
+		
+		function deleteCart(theCartID){
+			alert("deleting" + theCartID);
+			cart[theCartID] = null;
+			
+			delete cart[theCartID];
+		}
+		
+        $("document").ready(function(e){
+			pageSwap("");
+
+			$("#CollapsiblePanelTab1").click(pictureSwap1);
+            $("#CollapsiblePanelTab2").click(pictureSwap2);
+			
+			$("#Home").click(function(){
+				pageSwap("home");
+			})
+			$("#Martungale").click(function(){
+				pageSwap("martungale");
+			})
+			$("#Leather").click(function(){
+				pageSwap("leather");
+			})
+			$("#Designer").click(function(){
+				pageSwap("designer");
+			})
+			$("#Standard").click(function(){
+				pageSwap("standard");
+			})
+			$("#Beds").click(function(){
+				pageSwap("beds");
+			})
+			$("#Bowls").click(function(){
+				pageSwap("bowls");
+			})
+			$("#Portraits").click(function(){
+				pageSwap("portraits");
+			})
+			$("#Happy").click(function(){
+				pageSwap("happy");
+			})
+			$("#cartBtn").click(function(){
+				pageSwap("cart");
+				updateCart();
+			})
+			$("#btnCombustion").click(function(){
+				itemInfo("Combustion");
+				showDescription(currentPage);
+			})
+			$("#btnArson").click(function(){
+				itemInfo("Arson");
+				showDescription(currentPage);
+			})
+			$("#btnBackdraft").click(function(){
+				itemInfo("Backdraft");
+				showDescription(currentPage);
+			})
+			$("#btnBlowtorch").click(function(){
+				itemInfo("Blowtorch");
+				showDescription(currentPage);
+			})
+			$("#btnBlue").click(function(){
+				itemInfo("Blue");
+				showDescription(currentPage);
+			})
+			$("#btnGreen").click(function(){
+				itemInfo("Green");
+				showDescription(currentPage);
+			})
+			$("#btnPink").click(function(){
+				itemInfo("Pink");
+				showDescription(currentPage);
+			})
+			$("#btnRed").click(function(){
+				itemInfo("Red");
+				showDescription(currentPage);
+			})
+			$("#btnItalian").click(function(){
+				itemInfo("Italian");
+				showDescription(currentPage);
+			})
+			$("#btnStar").click(function(){
+				itemInfo("Star");
+				showDescription(currentPage);
+			})
+			$("#btnRedLeather").click(function(){
+				itemInfo("RedLeather");
+				showDescription(currentPage);
+			})
+			$("#btnValentine").click(function(){
+				itemInfo("Valentine");
+				showDescription(currentPage);
+			})
+			$("#btnCrossbones").click(function(){
+				itemInfo("Crossbones");
+				showDescription(currentPage);
+			})
+			$("#btnMulticolor").click(function(){
+				itemInfo("Multicolor");
+				showDescription(currentPage);
+			})
+			$("#btnPolkaDot").click(function(){
+				itemInfo("PolkaDot");
+				showDescription(currentPage);
+			})
+			$("#btnSilverBlue").click(function(){
+				itemInfo("SilverBlue");
+				showDescription(currentPage);
+			})
+			$("#btnBear").click(function(){
+				itemInfo("Bear");
+				showDescription(currentPage);
+			})
+			$("#btnOxford").click(function(){
+				itemInfo("Oxford");
+				showDescription(currentPage);
+			})
+			$("#btnPinkBed").click(function(){
+				itemInfo("PinkBed");
+				showDescription(currentPage);
+			})
+			$("#btnSlumber").click(function(){
+				itemInfo("Slumber");
+				showDescription(currentPage);
+			})
+			$("#btnBones").click(function(){
+				itemInfo("Bones");
+				showDescription(currentPage);
+			})
+			$("#btnGoodDog").click(function(){
+				itemInfo("GoodDog");
+				showDescription(currentPage);
+			})
+			$("#btnPlastic").click(function(){
+				itemInfo("Plastic");
+				showDescription(currentPage);
+			})
+			$("#btnSkull").click(function(){
+				itemInfo("Skull");
+				showDescription(currentPage);
+			})
+        });
+    </script>
+</head>
+
+<body>
+
+	<!-- Primary Page Layout
+	================================================== -->
+	
+    <!-- Content Wrapper -->
+	<div class="container">
+    
+    	<!-- Header Container -->
+		<div class="sixteen columns" id="header">
+			<div id="logo">
+            	<a href="index.html" title="Slouching Hound"><img src="images/header.jpeg" width="1000" height="263" alt="Slouching Hound Logo"></a>
+        	</div>
+        </div>
+    	<!-- Header Container End -->
+    
+        <!-- Menu Container -->  
+        <div class="four columns" id="sideMenu">
+        	
+            <!-- Menu Item (Non-Collapsible) -->
+            <div id="sideMenuTopSpacer"></div>
+            <div id="sideMenuHeader">
+                <div id="sideMenuHeaderTextNoCollapse">
+                    <a id="Home" href="#">Home</a>
+                </div>
+            </div>
+            <!-- Menu Item (Non-Collapsible) End -->
+            
+            <div id="sideMenuTopSpacer"></div>
+            
+            <!-- First Collapsible Panel -->
+            <div id="CollapsiblePanel1" class="CollapsiblePanel">
+            
+                <!-- First Collapsible Panel Header -->
+                <div class="CollapsiblePanelTab" tabindex="0" id="CollapsiblePanelTab1">
+                    <div class="sideMenuHeader" id="sideMenuHeader">
+                        <div id="sideMenuHeaderSign1"></div>
+                        <div id="sideMenuHeaderText">
+                            Collars & Leads
+                        </div>
+                    </div>
+                </div>
+                <!-- First Collapsible Panel Header End -->
+                
+                <!-- First Collapsible Panel Content -->
+                <div class="CollapsiblePanelContent">
+                    <div id="sideMenuContent">
+                        <div id="sideMenuContentWrapper">
+                            <div id="sideMenuLeftBar"></div>
+                            <div id="sideMenuTextAreaWrapper">
+                                <div id="sideMenuTextArea">
+                                    <ul>
+                                        <li><a id="Martungale" href="#">Martingale</a></li>
+                                        <li><a id="Leather" href="#">Leather</a></li>
+                                        <li><a id="Designer" href="#">Designer</a></li>
+                                        <li><a id="Standard" href="#">Collar and Lead Sets</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="sideMenuRightBar"></div>                
+                        </div>
+                        <div id="sideMenuBottomBar"></div>
+                    </div>
+                </div>
+                <!-- First Collapsible Panel Content End-->
+            </div>
+            <!-- First Collapsible Panel End -->
+            
+            <!-- Menu Item (Non-Collapsible) -->
+            <div id="sideMenuTopSpacer"></div>
+            <div id="sideMenuHeader">
+                <div id="sideMenuHeaderTextNoCollapse">
+                    <a id="Beds" href="#">Beds</a>
+                </div>
+            </div>
+            <!-- Menu Item (Non-Collapsible) End --> 
+            
+            <!-- Menu Item (Non-Collapsible) -->
+            <div id="sideMenuTopSpacer"></div>
+            <div id="sideMenuHeader">
+                <div id="sideMenuHeaderTextNoCollapse">
+                    <a id="Bowls" href="#">Bowls</a>
+                </div>
+            </div>  
+            <!-- Menu Item (Non-Collapsible) End -->
+            
+            <!-- Menu Item (Non-Collapsible) -->
+            <div id="sideMenuTopSpacer"></div>
+            <div id="sideMenuHeader">
+                <div id="sideMenuHeaderTextNoCollapse">
+                    <a id="Portraits" href="#">Pet Portraits</a>
+                </div>
+            </div>  
+            <!-- Menu Item (Non-Collapsible) End -->
+            
+            <!-- Menu Item (Non-Collapsible) -->
+            <div id="sideMenuTopSpacer"></div>
+            <div id="sideMenuHeader">
+                <div id="sideMenuHeaderTextNoCollapse">
+                    <a id="Happy" href="#">Happy Hounds</a>
+                </div>
+            </div>  
+            <!-- Menu Item (Non-Collapsible) End -->
+            
+            <!-- Menu Item (Non-Collapsible) -->
+            <div id="sideMenuTopSpacer"></div>
+            <div id="sideMenuHeader">
+                <div id="sideMenuHeaderTextNoCollapse">
+                    <a id="cartBtn" href="#">Shopping Basket</a>
+                </div>
+            </div>  
+            <!-- Menu Item (Non-Collapsible) End -->                        
+        </div>
+        <!-- Menu Container End --> 
+            
+        <!-- Content Block -->        
+        <div class="eleven columns" id="home">
+            <div class="eleven columns" id="contentWrapper">
+          <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Home
+                    </div>
+                </div>
+                
+          <div id="contentBody">
+                    <div id="contentBodyWrapperNoItems">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                        	<div id="contentBodyText">
+                            	
+                        		<h6>Thanks for visiting Slouching Hound.</h6><br>
+                                <a href="images/home_images/dog_asleep_large.jpg" rel="lightbox" title="A Portrait of a Sleeping Dog">
+                                <img src="images/home_images/dog_asleep.jpg" alt="A portrait of a dog asleep on a bed" width="201" height="151" align="right"></a>
+                                
+                                Slouching Hound is the home of high-quality beautifully made collars, pet portraits and gifts for any hound lover.<br><br>
+                                
+                                
+                       		  <h6>About me</h6>
+                                
+                                My love for hounds came from a small child growing up with a house full of sighthounds to now owning  my own mischievous little whippet Alfie. 
+                                With this love i combined  my degree in art and textiles to produce high quality  bespoke dog collars, beautiful pet portraits and now  other hound related products.<br><br>
+                                
+                                <a href="images/home_images/dog_on_bed_large.jpg" rel="lightbox" title="A Portrait of a Dog on a Bed">
+                                <img src="images/home_images/dog_on_bed.jpg" alt="A portrait of a dog lying on a bed" width="216" height="222" align="left"></a>
+                                
+                                For my portraits I work in different mediums including pastels, acrylics and artist quality crayons and produce life like pictures for you to treasure from your own photographs.<br><br>
+                                
+                                <a href="images/home_images/collar_large.jpg" rel="lightbox" title="Two Dog Collars">
+                                <img src="images/home_images/collar.jpg" alt="A picture of two dog collars" width="165" height="124" align="right"></a>
+                                
+                                My collars come in lots of different designs, they can be made to measure,  lined or unlined.<br><br>
+                                
+                                feel free to contact me for details. . . .
+                          </div>
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Content Block End -->
+      
+      	<!-- Content Block --> 
+        <div class="eleven columns" id="martungale">
+            <div class="eleven columns" id="contentWrapper">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Martingale Collars
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper" class="martungaleWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                            	<!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/martingale/Combustion.jpg" width="100" height="52" alt="Combustion"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Red flame dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" martingale collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £25
+                                        <input name="detailsBtn" type="button" id="btnCombustion" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/martingale/arson.jpg" width="100" height="49" alt="Arson Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Yellow flame dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" martingale collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £25
+                                        <input name="detailsBtn" type="button" id="btnArson" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/martingale/backdraft.jpg" width="100" height="46" alt="Backdraft Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Pink flame dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" martingale collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £25
+                                        <input name="detailsBtn" type="button" id="btnBackdraft" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/martingale/blowtorch.jpg" width="100" height="53" alt="Blowtorch Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Blue flame dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" martingale collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £25
+                                        <input name="detailsBtn" type="button" id="btnBlowtorch" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                            </div>
+                            
+                            <!-- Item Description Area -->
+                            <div id="itemDescriptions" class="martungaleItem">
+                            	<div id="contentBodyBottomBar"></div>
+                            
+                                <div id="itemDescriptionWrapper">
+                                    <div id="itemDescriptionPic" class="martungaleDescriptionPic"></div>
+                                    <div id="itemDescriptionText" class="martungaleDescriptionText"></div>
+                              	</div>
+                            </div>
+                            <!-- Item Decription Area End -->
+                            
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+        
+        <!-- Content Block --> 
+        <div class="eleven columns" id="leather">
+            <div class="eleven columns" id="contentWrapper">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Leather Collars
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper" class="leatherWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                            	<!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/leather/blue.jpg" width="100" height="100" alt="Blue Leather Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Blue leather dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" leather collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £15
+                                      <input name="detailsBtn" type="button" id="btnBlue" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/leather/green.jpg" width="100" height="100" alt="Green Leather Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Green leather dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" leather collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £15
+                                      <input name="detailsBtn" type="button" id="btnGreen" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/leather/pink.jpg" width="100" height="75" alt="Pink Leather Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Pink leather dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" leather collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £15
+                                      <input name="detailsBtn" type="button" id="btnPink" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/leather/red.jpg" width="100" height="75" alt="Red Leather Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Red leather dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" leather collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £15
+                                      <input name="detailsBtn" type="button" id="btnRed" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                            </div>
+                            
+                            <!-- Item Description Area -->
+                            <div id="itemDescriptions" class="leatherItem">
+                            	<div id="contentBodyBottomBar"></div>
+                            
+                                <div id="itemDescriptionWrapper">
+                                    <div id="itemDescriptionPic" class="leatherDescriptionPic"></div>
+                                    <div id="itemDescriptionText" class="leatherDescriptionText"></div>
+                              	</div>
+                            </div>
+                            <!-- Item Decription Area End -->
+                            
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+        
+        <!-- Content Block --> 
+        <div class="eleven columns" id="designer">
+            <div class="eleven columns" id="contentWrapper">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Designer Collars
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper" class="designerWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                            	<!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/designer/italian.jpg" width="100" height="92" alt="Italian Style Designer Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Italian style designer dog collar
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" designer collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £30
+                                        <input name="detailsBtn" type="button" id="btnItalian" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/designer/leatherStar.jpg" width="100" height="60" alt="Star Style Designer Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Star style designer dog collar
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 2" designer collar
+                                          </li>
+                                        </ul><br>
+                                        Price: £30
+                                        <input name="detailsBtn" type="button" id="btnStar" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/designer/redLeather.jpg" width="100" height="75" alt="Red Leather Designer Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Red leather designer dog collar
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 2" designer collar
+                                          </li>
+                                        </ul><br>
+                                        Price: £30
+                                        <input name="detailsBtn" type="button" id="btnRedLeather" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/designer/valentine.jpg" width="100" height="80" alt="Valentine Style Designer Collar"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Valentine designer dog collar
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 2" designer collar
+                                          </li>
+                                        </ul><br>
+                                        Price: £30
+                                        <input name="detailsBtn" type="button" id="btnValentine" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                            </div>
+                            
+                            <!-- Item Description Area -->
+                            <div id="itemDescriptions" class="designerItem">
+                            	<div id="contentBodyBottomBar"></div>
+                            
+                                <div id="itemDescriptionWrapper">
+                                    <div id="itemDescriptionPic" class="designerDescriptionPic"></div>
+                                    <div id="itemDescriptionText" class="designerDescriptionText"></div>
+                              	</div>
+                            </div>
+                            <!-- Item Decription Area End -->
+                            
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+        
+        <!-- Content Block --> 
+        <div class="eleven columns" id="standard">
+            <div class="eleven columns" id="contentWrapper">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Collar & Lead Sets
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper" class="standardWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                            	<!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/collar_lead_sets/crossbones.jpg" width="100" height="100" alt="Crossbones Collar & Lead Set"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Crossbones collar & lead set
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 2" collar
+                                            </li>
+                                        </ul><br>
+                                        Price: £40
+                                        <input name="detailsBtn" type="button" id="btnCrossbones" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/collar_lead_sets/multiColor.jpg" width="100" height="100" alt="Multicolored Collar & Lead Set"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Multicolored collar & lead set
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 2" collar
+                                          </li>
+                                        </ul><br>
+                                        Price: £40
+                                      <input name="detailsBtn" type="button" id="btnMulticolor" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/collar_lead_sets/polkaDot.jpg" width="100" height="100" alt="Polka Dot Collar & Lead Set"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Polka dot collar & lead set
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 2" collar
+                                          </li>
+                                        </ul><br>
+                                        Price: £40
+                                      <input name="detailsBtn" type="button" id="btnPolkaDot" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/collar_lead_sets/silverBlue.jpg" width="100" height="100" alt="Silver & Blue Collar & Lead Set"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Silver & blue collar & lead set
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 2" collar
+                                          </li>
+                                        </ul><br>
+                                        Price: £40
+                                      <input name="detailsBtn" type="button" id="btnSilverBlue" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                            </div>
+                            
+                            <!-- Item Description Area -->
+                            <div id="itemDescriptions" class="standardItem">
+                            	<div id="contentBodyBottomBar"></div>
+                            
+                                <div id="itemDescriptionWrapper">
+                                    <div id="itemDescriptionPic" class="standardDescriptionPic"></div>
+                                    <div id="itemDescriptionText" class="standardDescriptionText"></div>
+                              	</div>
+                            </div>
+                            <!-- Item Decription Area End -->
+                            
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+        
+        <!-- Content Block --> 
+        <div class="eleven columns" id="beds">
+            <div class="eleven columns" id="contentWrapper">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Beds
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper" class="bedsWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                            	<!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/beds/bear.jpg" width="100" height="64" alt="Bear Dog Bed"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Bear dog bed
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 6" bed
+                                            </li>
+                                        </ul><br>
+                                        Price: £50
+                                        <input name="detailsBtn" type="button" id="btnBear" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/beds/oxford.JPG" width="100" height="67" alt="Oxford Dog Bed"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Oxford dog bed
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 6" bed
+                                          </li>
+                                        </ul><br>
+                                        Price: £50
+                                      <input name="detailsBtn" type="button" id="btnOxford" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/beds/pink.jpg" width="100" height="100" alt="Pink Dog Bed"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Pink dog bed
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 6" bed
+                                          </li>
+                                        </ul><br>
+                                        Price: £50
+                                      <input name="detailsBtn" type="button" id="btnPinkBed" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/beds/slumber.jpg" width="100" height="67" alt="Slumber Dog Bed"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Slumber dog bed
+                                        </li>
+                                            <li id="bullets">
+                                        		Shown as 6" bed
+                                          </li>
+                                        </ul><br>
+                                        Price: £50
+                                      <input name="detailsBtn" type="button" id="btnSlumber" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                            </div>
+                            
+                            <!-- Item Description Area -->
+                            <div id="itemDescriptions" class="bedsItem">
+                            	<div id="contentBodyBottomBar"></div>
+                            
+                                <div id="itemDescriptionWrapper">
+                                    <div id="itemDescriptionPic" class="bedsDescriptionPic"></div>
+                                    <div id="itemDescriptionText" class="bedsDescriptionText"></div>
+                              	</div>
+                            </div>
+                            <!-- Item Decription Area End -->
+                            
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+        
+        <!-- Content Block --> 
+        <div class="eleven columns" id="bowls">
+            <div class="eleven columns" id="contentWrapper">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Bowls
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper" class="bowlsWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                            	<!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/bowls/bones.jpg" width="100" height="62" alt="Bones Dog Bowl"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Bones dog bowl
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 4" bowl
+                                            </li>
+                                        </ul><br>
+                                        Price: £20
+                                        <input name="detailsBtn" type="button" id="btnBones" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/bowls/goodDog.jpg" width="100" height="100" alt="Good Dog Dog Bowl"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Good dog dog bowl
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 4" bowl
+                                            </li>
+                                        </ul><br>
+                                        Price: £20
+                                      <input name="detailsBtn" type="button" id="btnGoodDog" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/bowls/plastic.jpg" width="100" height="100" alt="Plastic Dog Bowl"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Plastic dog bowl
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 4" bowl
+                                            </li>
+                                        </ul><br>
+                                        Price: £20
+                                      <input name="detailsBtn" type="button" id="btnPlastic" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                                <!-- Item Area -->
+                                <div id="itemWrap">
+                                	<div id="itemPic"><img src="images/items/bowls/skull.jpg" width="100" height="100" alt="Skull Dog Bowl"></div>
+                                    <div id="itemText">
+                                    	Description:
+                                        <ul id="bullet">
+                                        	<li id="bullets">
+                                        		Skull dog bowl
+                                            </li>
+                                            <li id="bullets">
+                                        		Shown as 4" bowl
+                                            </li>
+                                        </ul><br>
+                                        Price: £20
+                                      <input name="detailsBtn" type="button" id="btnSkull" value="Further Details">
+                                    </div>
+                                </div>
+                                <!-- Item Area End -->
+                                
+                            </div>
+                            
+                            <!-- Item Description Area -->
+                            <div id="itemDescriptions" class="bowlsItem">
+                            	<div id="contentBodyBottomBar"></div>
+                            
+                                <div id="itemDescriptionWrapper">
+                                    <div id="itemDescriptionPic" class="bowlsDescriptionPic"></div>
+                                    <div id="itemDescriptionText" class="bowlsDescriptionText"></div>
+                              	</div>
+                            </div>
+                            <!-- Item Decription Area End -->
+                            
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+        
+        <!-- Content Block -->        
+        <div class="eleven columns" id="portraits">
+            <div class="eleven columns" id="contentWrapper">
+          		<div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Pet Portraits
+                    </div>
+                </div>
+        		<div id="contentBody">
+        			<div id="contentBodyWrapperGallery">
+        	    		<div id="contentBodyLeftBar"></div>
+                		<div id="contentBodyTextWrapper">
+        	       			<div id="contentBodyText"> 
+        	           			<a href="images/home_images/dog_on_bed_large.jpg" rel="lightbox" title="A portrait of a dog lying on a bed">
+                        		<img src="images/home_images/dog_on_bed.jpg" alt="A portrait of a dog lying on a bed" width="216" height="222" align="left"></a>
+                                
+                        		<br><h6>Beautiful pet portraits taken from your photographs.........simple just email me your photos and i'll do the rest.</h6><br>
+
+								I work in different mediums including Acrylics, Pastels, Pencil Crayons and Graphite Pencil. 
+                        		You can choose which you prefer or you can leave it to me to decided which medium suits your picture best. Pictures can be framed or not its up to you....<br><br>
+  								
+                        		
+
+								<h6>Below is a gallery of some of my works....</h6>
+                                
+                                <br>
+                                
+                                <!-- Start WOWSlider.com BODY section id=wowslider-container1 -->
+                                <div id="wowslider-container1">
+                                	<div class="ws_images">
+                                    	<ul>
+                                			<li><img src="data1/images/dog1.jpg" alt="Dog Portrait in Crayon" title="Dog Portrait in Crayon" id="wows1_0"/>This is a portrait of a dog done in crayon</li>
+                                            <li><img src="data1/images/dog2.jpg" alt="Dog Portrait in Crayon" title="Dog Portrait in Crayon" id="wows1_1"/>This is a portrait of a dog done in crayon</li>
+                                            <li><img src="data1/images/dog3.jpg" alt="Dog Portrait in Crayon" title="Dog Portrait in Crayon" id="wows1_2"/>This is a portrait of a dog done in crayon</li>
+                                            <li><img src="data1/images/dog4.jpg" alt="Dog Portrait in Pencil" title="Dog Portrait in Pencil" id="wows1_3"/>This is a portrait of a dog done in pencil</li>
+                                            <li><img src="data1/images/dog5.jpg" alt="Issey in Pastels" title="Issey in Pastels" id="wows1_4"/>This is a portrait of Issey done in pastels</li>
+                                            <li><img src="data1/images/hamish_and_patsy.jpg" alt="Hamish & Patsy in Pastels 1" title="Hamish & Patsy in Pastels 1" id="wows1_5"/>This is a portrait of Hamish & Patsy done in pastels</li>
+                                            <li><img src="data1/images/hamish_and_patsy_2.jpg" alt="Hamish & Patsy in Pastels 2" title="Hamish & Patsy in Pastels 2" id="wows1_6"/>This is a portrait of Hamish & Patsy done in pastels</li>
+                                            <li><img src="data1/images/louis.jpg" alt="Louis in Pastels" title="Louis in Pastels" id="wows1_7"/>This is a portrait of Louis done in pastels</li>
+                                            <li><img src="data1/images/orinoco.jpg" alt="Orinoco in Pastels" title="Orinoco in Pastels" id="wows1_8"/>This is a portrait of Orinoco done in pastels</li>
+                                            <li><img src="data1/images/patch.jpg" alt="Patch in Pastels" title="Patch in Pastels" id="wows1_9"/>This is a portrait of Patch done in pastels</li>
+                                            <li><img src="data1/images/sam.jpg" alt="Sam in Crayon" title="Sam in Crayon" id="wows1_10"/>This is a portrait of Orinoco done in crayon</li>
+                                            <li><img src="data1/images/stan.jpg" alt="Stan in Pastels" title="Stan in Pastels" id="wows1_11"/>This is a portrait of Stan done in pastels</li>
+                                            <li><img src="data1/images/tabitha.jpg" alt="Tabitha in Pastels" title="Tabitha in Pastels" id="wows1_12"/>This is a portrait of Tabitha done in pastels</li>
+                                            <li><img src="data1/images/winstone.jpg" alt="Winstone in Pastels" title="Winstone in Pastels" id="wows1_13"/>This is a portrait of Winstone done in pastels</li>
+                                		</ul>
+                                	</div>
+                                	<div class="ws_thumbs">
+                                		<div>
+                                            <a href="#wows1_0" title="Dog Portrait in Crayon"><img src="data1/tooltips/dog1.jpg" alt="" /></a>
+                                            <a href="#wows1_1" title="Dog Portrait in Crayon"><img src="data1/tooltips/dog2.jpg" alt="" /></a>
+                                            <a href="#wows1_2" title="Dog Portrait in Crayon"><img src="data1/tooltips/dog3.jpg" alt="" /></a>
+                                            <a href="#wows1_3" title="Dog Portrait in Pencil"><img src="data1/tooltips/dog4.jpg" alt="" /></a>
+                                            <a href="#wows1_4" title="Issey in Pastels"><img src="data1/tooltips/dog5.jpg" alt="" /></a>
+                                            <a href="#wows1_5" title="Hamish & Patsy in Pastels 1"><img src="data1/tooltips/hamish_and_patsy.jpg" alt="" /></a>
+                                            <a href="#wows1_6" title="Hamish & Patsy in Pastels 2"><img src="data1/tooltips/hamish_and_patsy_2.jpg" alt="" /></a>
+                                            <a href="#wows1_7" title="Louis in Pastels"><img src="data1/tooltips/louis.jpg" alt="" /></a>
+                                            <a href="#wows1_8" title="Orinoco in Pastels"><img src="data1/tooltips/orinoco.jpg" alt="" /></a>
+                                            <a href="#wows1_9" title="Patch in Pastels"><img src="data1/tooltips/patch.jpg" alt="" /></a>
+                                            <a href="#wows1_10" title="Sam in Crayon"><img src="data1/tooltips/sam.jpg" alt="" /></a>
+                                            <a href="#wows1_11" title="Stan in Pastels"><img src="data1/tooltips/stan.jpg" alt="" /></a>
+                                            <a href="#wows1_12" title="Tabitha in Pastels"><img src="data1/tooltips/tabitha.jpg" alt="" /></a>
+                                            <a href="#wows1_13" title="Winstone in Pastels"><img src="data1/tooltips/winstone.jpg" alt="" /></a>
+                                		</div>
+                                	</div>
+                                	<a class="wsl" href="http://wowslider.com">Free Slideshow Software Download by WOWSlider.com v3.3</a>
+                                	<a href="#" class="ws_frame"></a>
+                                	<div class="ws_shadow"></div>
+                                </div>
+                                <script type="text/javascript" src="engine1/wowslider.js"></script>
+                                <script type="text/javascript" src="engine1/script.js"></script>
+                                <!-- End WOWSlider.com BODY section -->
+                    		</div>
+                		</div>
+                		<div id="contentBodyRightBar"></div>
+            		</div>
+            		<div id="contentBodyBottomBar"></div>
+            	</div>
+            </div>
+        </div>
+        <!-- Content Block End -->
+        
+        <!-- Content Block -->        
+        <div class="eleven columns" id="happy">
+            <div class="eleven columns" id="contentWrapper">
+          		<div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Happy Hounds
+                    </div>
+                </div>
+                
+          		<div id="contentBody">
+            		<div id="contentBodyWrapperGallery">
+                		<div id="contentBodyLeftBar"></div>
+                    	<div id="contentBodyTextWrapper">
+                    		<div id="contentBodyText">
+                            	<h4>Meet the Happy hounds......</h4>
+                                
+								<h6>If you would like your dog to appear here just send me a photo of them wearing their new collar....</h6>
+                                
+                                
+
+                                <!-- Start WOWSlider.com BODY section id=wowslider-container2 -->
+                                <div id="wowslider-container2">
+                                	<div class="ws_images">
+                                    	<ul>
+                                            <li><img src="data2/images/dog1.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_0"/>Happy Hounds with their new collars</li>
+                                            <li><img src="data2/images/dog10.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_1"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog11.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_2"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog12.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_3"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog13.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_4"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog14.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_5"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog15.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_6"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog16.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_7"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog17.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_8"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog18.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_9"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog19.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_10"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog2.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_11"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog20.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_12"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog21.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_13"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog22.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_14"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog23.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_15"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog24.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_16"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog3.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_17"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog4.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_18"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog5.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_19"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog6.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_20"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog7.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_21"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog8.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_22"/>Happy Hound with its new collar</li>
+                                            <li><img src="data2/images/dog9.jpg" alt="Happy Hound" title="Happy Hound" id="wows2_23"/>Happy Hound with its new collar</li>
+                                		</ul>
+                                	</div>
+                                	<div class="ws_thumbs">
+                                		<div>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog1.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog10.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog11.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog12.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog13.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog14.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog15.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog16.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog17.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog18.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog19.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog2.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog20.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog21.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog22.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog23.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog24.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog3.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog4.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog5.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog6.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog7.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog8.jpg" alt="" /></a>
+                                            <a href="#" title="Happy Hound"><img src="data2/tooltips/dog9.jpg" alt="" /></a>
+                                		</div>
+                                	</div>
+                                	<a class="wsl" href="http://wowslider.com">Free Slideshow Software Download by WOWSlider.com v3.3</a>
+                                    <a href="#" class="ws_frame"></a>
+                                    <div class="ws_shadow"></div>
+                                </div>
+                                    <script type="text/javascript" src="engine2/wowslider.js"></script>
+                                    <script type="text/javascript" src="engine2/script.js"></script>
+                                <!-- End WOWSlider.com BODY section -->
+                        	</div>
+                    	</div>
+                    	<div id="contentBodyRightBar"></div>
+                	</div>
+                	<div id="contentBodyBottomBar"></div>
+            	</div>
+            </div>
+        </div>
+        <!-- Content Block End -->
+        
+        <!-- Content Block --> 
+        <div class="eleven columns" id="cart">
+            <div class="eleven columns" id="contentWrapperNoItems">
+                <div id="contentHeader">
+                    <div id="contentHeaderText">
+                        Shopping Basket
+                    </div>
+                </div>
+                
+                <div id="contentBody">
+                    <div id="contentBodyWrapper">
+                        <div id="contentBodyLeftBar"></div>
+                        <div id="contentBodyTextWrapper">
+                            <div id="contentBodyText">
+                                <div class="cartItem" id="cartItem"></div>
+                            </div>
+                        </div>
+                        <div id="contentBodyRightBar"></div>
+                    </div>
+                    <div id="contentBodyBottomBar"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- Content Block End -->
+	</div>
+	<!-- Content Wrapper End -->
+
+	<!-- Javascript for running of collapsible panels -->
+	<script type="text/javascript">
+        var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1", {contentIsOpen:false});
+    </script>
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
